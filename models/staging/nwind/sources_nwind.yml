@@ -1,0 +1,18 @@
+version: 2
+sources:
+  - name: nwind
+    database: fea_academy
+    schema: northwind
+    tables:
+      - name: orders
+        description: tabela de ordens do ERP do northwind
+        columns:
+          - name: order_id
+            description: Coluna de chave primaria da tabela Ordens
+            tests:
+              - unique
+              - not_null
+          - name: customer_id
+            description: Chave extrangeira    
+      - name: order_details
+        description: tabela de itens de dados do ERP do nothwind
