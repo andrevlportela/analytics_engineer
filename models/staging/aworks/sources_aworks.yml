@@ -1,0 +1,125 @@
+version: 2
+
+sources:
+  - name: aworks
+    database: fea_academy
+    schema: adventure_works
+    tables:
+
+      - name: production_product
+        description: Cadastro mestre de produtos comercializados no ambiente Adventure Works.
+        columns:
+          - name: productid
+            description: Identificador único do produto no sistema.
+            tests:
+              - not_null
+              - unique
+
+      - name: sales_customer
+        description: Estrutura responsável por vincular o cliente à entidade pessoa no contexto das vendas.
+        columns:
+          - name: customerid
+            description: Identificador do cliente associado às transações comerciais.
+            tests:
+              - not_null
+          - name: personid
+            description: Código da pessoa relacionada ao cliente dentro do modelo relacional.
+
+      - name: person_person
+        description: Registro principal das pessoas físicas ou jurídicas cadastradas.
+        columns:
+          - name: businessentityid
+            description: Chave primária que identifica a entidade (cliente/pessoa).
+            tests:
+              - not_null
+              - unique
+
+      - name: sales_salesreason
+        description: Tabela que armazena os motivos ou classificações relacionadas às vendas.
+        columns:
+          - name: salesreasonid
+            description: Identificador exclusivo do motivo de venda.
+            tests:
+              - not_null
+              - unique
+
+      - name: sales_salesorderheadersalesreason
+        description: Relacionamento entre pedidos de venda e seus respectivos motivos.
+        columns:
+          - name: salesorderid
+            description: Código da ordem de venda associada ao motivo.
+            tests:
+              - not_null
+          - name: salesreasonid
+            description: Identificador do motivo vinculado ao pedido.
+            tests:
+              - not_null
+
+      - name: sales_creditcard
+        description: Cadastro dos cartões de crédito utilizados nas transações de venda.
+        columns:
+          - name: creditcardid
+            description: Identificador único do cartão registrado no sistema.
+            tests:
+              - not_null
+              - unique
+
+      - name: person_countryregion
+        description: Tabela de domínio contendo os países cadastrados.
+        columns:
+          - name: countryregioncode
+            description: Código representativo do país.
+            tests:
+              - unique
+
+      - name: person_stateprovince
+        description: Cadastro das unidades federativas vinculadas aos países.
+        columns:
+          - name: stateprovinceid
+            description: Identificador exclusivo da província ou estado.
+            tests:
+              - not_null
+              - unique
+          - name: countryregioncode
+            description: Código do país ao qual a província está associada.
+            tests:
+              - not_null
+
+      - name: person_address
+        description: Registro dos endereços vinculados às entidades cadastradas.
+        columns:
+          - name: addressid
+            description: Identificador único do endereço.
+            tests:
+              - not_null
+              - unique
+          - name: stateprovinceid
+            description: Código da província/estado referente ao endereço.
+            tests:
+              - not_null
+
+      - name: sales_salesorderheader
+        description: Cabeçalho das ordens de venda contendo informações gerais da transação.
+        columns:
+          - name: salesorderid
+            description: Identificador primário da ordem de venda.
+            tests:
+              - not_null
+              - unique
+          - name: customerid
+            description: Código do cliente responsável pelo pedido.
+            tests:
+              - not_null
+
+      - name: sales_salesorderdetail
+        description: Itens detalhados pertencentes às ordens de venda.
+        columns:
+          - name: salesorderdetailid
+            description: Identificador exclusivo do item da ordem.
+            tests:
+              - not_null
+              - unique
+          - name: salesorderid
+            description: Código da ordem de venda à qual o item pertence.
+            tests:
+              - not_null
