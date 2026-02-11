@@ -2,17 +2,17 @@ with
 
     inter_pedidos_items as (
         select *
-        from {{ ref('stg_sap_aworks__sales_salesorderdetail') }}
+        from {{ ref('stg_aworks__sales_salesorderdetail') }}
 
     )
     , inter_pedidos as (
         select *
-        from {{ ref('stg_sap_aworks__sales_salesorderheader') }}
+        from {{ ref('stg_aworks__sales_salesorderheader') }}
     )
 
     , inter_cartoes as (
         select *
-        from {{ ref('stg_sap_aworks__sales_creditcard') }}
+        from {{ ref('stg_aworks__sales_creditcard') }}
     )
 
     , joined as (

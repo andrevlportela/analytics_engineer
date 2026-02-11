@@ -3,13 +3,13 @@ with
 
     razoes_pedidos as (
         select *
-        from {{ ref('stg_sap_aworks__sales_salesorderheadersalesreason') }}
+        from {{ ref('stg_aworks__sales_salesorderheadersalesreason') }}
 
         
     )
     , razoes as (
         select *
-        from {{ ref('stg_sap_aworks__sales_salesreason') }}
+        from {{ ref('stg_aworks__sales_salesreason') }}
     )
 
 

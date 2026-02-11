@@ -3,12 +3,12 @@ with
 
     order_items as (
         select *
-        from {{ ref('stg_sap_nwind__order_details') }}
+        from {{ ref('stg_nwind__order_details') }}
 
     )
     , orders as (
         select *
-        from {{ ref('stg_sap_nwind__orders') }}
+        from {{ ref('stg_nwind__orders') }}
     )
 
 
