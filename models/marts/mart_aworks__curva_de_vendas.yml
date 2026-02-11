@@ -58,7 +58,7 @@ models:
         tests:
           - not_null
 
-      - name: dsc_cidade
+      - name: cidade
         description: Município relacionado à operação comercial.
         tests:
           - not_null

@@ -33,7 +33,7 @@ models:
         tests:
           - not_null
 
-      - name: dsc_cidade
+      - name: cidade
         description: Município correspondente à transação realizada.
         tests:
           - not_null

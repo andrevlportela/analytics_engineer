@@ -53,7 +53,7 @@ models:
         tests:
           - not_null
 
-      - name: dsc_cidade
+      - name: cidade
         description: Município correspondente ao endereço da venda.
         tests:
           - not_null
