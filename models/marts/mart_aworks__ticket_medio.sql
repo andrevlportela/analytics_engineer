@@ -22,7 +22,7 @@ with
         select
             year(int_ticket.data_pedido) as Ano
             , month(int_ticket.data_pedido) as Mes 
-            , int_localidade.dsc_cidade
+            , int_localidade.cidade
             , int_localidade.dsc_estado
             , int_localidade.dsc_pais
             , int_ticket.productid
@@ -44,7 +44,7 @@ with
         group by
             year(int_ticket.data_pedido)
             , month(int_ticket.data_pedido) 
-            , int_localidade.dsc_cidade
+            , int_localidade.cidade
             , int_localidade.dsc_estado
             , int_localidade.dsc_pais
             , int_ticket.productid

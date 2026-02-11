@@ -23,7 +23,7 @@ with
         select
             int_curva.pedido_id
             , int_curva.data_pedido
-            , int_localidade.dsc_cidade
+            , int_localidade.cidade
             , int_localidade.dsc_estado
             , int_localidade.dsc_pais
             , int_curva.productid
@@ -43,7 +43,7 @@ with
         group by
             int_curva.pedido_id
             , int_curva.data_pedido
-            , int_localidade.dsc_cidade
+            , int_localidade.cidade
             , int_localidade.dsc_estado
             , int_localidade.dsc_pais
             , int_curva.productid
