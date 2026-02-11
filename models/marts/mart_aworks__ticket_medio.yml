@@ -1,0 +1,59 @@
+models:
+  - name: mart_aworks__ticket_medio
+    description: Modelo fato analítico que consolida métricas de receita e volume de pedidos para cálculo do ticket médio por recortes temporais e geográficos.
+    columns:
+
+      - name: productid
+        description: Identificador do item comercializado no período analisado.
+        tests:
+          - not_null
+
+      - name: dsc_produto
+        description: Nome ou descrição do produto considerado na apuração.
+        tests:
+          - not_null
+
+      - name: Ano
+        description: Ano de competência da venda.
+        tests:
+          - not_null
+
+      - name: Mes
+        description: Mês de referência da transação.
+        tests:
+          - not_null
+
+      - name: dsc_pais
+        description: País associado à operação de venda.
+        tests:
+          - not_null
+
+      - name: dsc_estado
+        description: Unidade federativa vinculada à venda.
+        tests:
+          - not_null
+
+      - name: dsc_cidade
+        description: Município correspondente à transação realizada.
+        tests:
+          - not_null
+
+      - name: numero_de_pedidos
+        description: Quantidade total de pedidos considerados no período e segmento analisado.
+        tests:
+          - not_null
+
+      - name: faturamento_bruto
+        description: Receita total gerada antes da aplicação de descontos.
+        tests:
+          - not_null
+
+      - name: faturamento_com_desconto
+        description: Receita efetiva após dedução de descontos concedidos.
+        tests:
+          - not_null
+
+      - name: ticket_medio
+        description: Indicador calculado pela razão entre a receita líquida e o número de pedidos no período.
+        tests:
+          - not_null

@@ -1,0 +1,19 @@
+models:
+  - name: mart_aworks__dim_razoes
+    description: Dimensão responsável por categorizar e detalhar os motivos associados às ordens de venda.
+    columns:
+
+      - name: dsc_razao
+        description: Texto descritivo que identifica o motivo relacionado à venda.
+        tests:
+          - not_null
+
+      - name: reasontype
+        description: Classificação ou categoria do motivo de venda.
+        tests:
+          - not_null
+
+      - name: pedido_id
+        description: Identificador da ordem de venda vinculada ao motivo registrado.
+        tests:
+          - not_null

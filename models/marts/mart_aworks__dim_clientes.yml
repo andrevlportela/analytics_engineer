@@ -1,0 +1,21 @@
+models:
+  - name: mart_aworks__dim_clientes
+    description: Tabela dimensional responsável por consolidar os dados cadastrais dos clientes utilizados nas análises de vendas.
+    columns:
+
+      - name: nome_completo
+        description: Nome completo da pessoa vinculada ao cliente, composto por primeiro nome, nome do meio e sobrenome.
+        tests:
+          - not_null
+
+      - name: customerid
+        description: Identificador único do cliente no sistema transacional.
+        tests:
+          - not_null
+          - unique
+
+      - name: personid
+        description: Chave que referencia a entidade pessoa associada ao cliente.
+        tests:
+          - not_null
+          - unique

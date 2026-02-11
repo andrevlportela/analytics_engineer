@@ -1,0 +1,24 @@
+models:
+  - name: mart_aworks__dim_produtos
+    description: Tabela dimensional que consolida os atributos cadastrais e operacionais dos produtos comercializados.
+    columns:
+
+      - name: dsc_produto
+        description: Nome ou descrição comercial utilizada para identificação do produto.
+        tests:
+          - not_null
+
+      - name: productnumber
+        description: Código de referência interno ou SKU de fabricação do item.
+        tests:
+          - not_null
+          - unique
+
+      - name: safetystocklevel
+        description: Nível mínimo recomendado de estoque para reposição do produto.
+
+      - name: productid
+        description: Identificador único do produto no sistema.
+        tests:
+          - not_null
+          - unique
