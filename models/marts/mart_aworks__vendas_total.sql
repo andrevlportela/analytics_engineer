@@ -37,7 +37,7 @@ with
                 when int_sales.vlr_desconto > 0 then true
                 else false
             end as tem_desconto
-            , int_localidade.dsc_cidade
+            , int_localidade.cidade
             , int_localidade.dsc_estado
             , int_localidade.dsc_pais
         from int_sales
