@@ -1,0 +1,64 @@
+models:
+  - name: mart_aworks__curva_de_vendas
+    description: Modelo fato consolidado com métricas de vendas segmentadas por produto e dimensões geográficas e temporais (ano e mês).
+    columns:
+
+      - name: productid
+        description: Identificador do item comercializado na transação.
+        tests:
+          - not_null
+
+      - name: dsc_produto
+        description: Nome ou descrição comercial do produto vendido.
+        tests:
+          - not_null
+
+      - name: quantidade
+        description: Volume de unidades vendidas no pedido.
+        tests:
+          - not_null
+
+      - name: faturamento_com_desconto
+        description: Receita final da venda considerando descontos aplicados.
+        tests:
+          - not_null
+
+      - name: faturamento_bruto
+        description: Valor total da venda antes da aplicação de descontos.
+        tests:
+          - not_null
+
+      - name: pedido_id
+        description: Código identificador da ordem de venda.
+        tests:
+          - not_null
+
+      - name: data_pedido
+        description: Data em que a venda foi efetivamente registrada.
+        tests:
+          - not_null
+
+      - name: customerid
+        description: Identificador do cliente responsável pela compra.
+        tests:
+          - not_null
+
+      - name: cardtype
+        description: Categoria do cartão de crédito utilizado no pagamento.
+        tests:
+          - not_null
+
+      - name: dsc_pais
+        description: País associado ao endereço de faturamento ou entrega.
+        tests:
+          - not_null
+
+      - name: dsc_estado
+        description: Unidade federativa vinculada à venda.
+        tests:
+          - not_null
+
+      - name: cidade
+        description: Município relacionado à operação comercial.
+        tests:
+          - not_null

@@ -9,7 +9,7 @@ source_orders_details as (
 renamed as (
 
     select
-        {{ dbt_utils.generate_surrogate_key(['order_id','product_id'])}} as order_item_sk
+        {{ dbt_utils.generate_surrogate_key(['order_id','product_id'])}} as order_item_pk
         ,cast(order_id as int) as order_fk
         ,cast(product_id as int) as product_fk
         ,cast(unit_price as float) as unit_price

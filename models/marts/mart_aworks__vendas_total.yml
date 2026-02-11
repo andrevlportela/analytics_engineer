@@ -1,0 +1,109 @@
+models:
+  - name: mart_aworks__vendas_total
+    description: Modelo fato detalhado no nível mais granular (item por pedido), consolidando informações de produto, cliente, localização e meio de pagamento.
+    columns:
+
+      - name: item_unico_pk
+        description: Identificador composto do item da venda (Pedido + Item), garantindo unicidade no nível transacional.
+        tests:
+          - not_null
+
+      - name: pedido_id
+        description: Código da ordem comercial registrada no sistema.
+        tests:
+          - not_null
+
+      - name: item_id
+        description: Identificador sequencial do item dentro do pedido.
+        tests:
+          - not_null
+
+      - name: data_pedido
+        description: Data em que a transação foi efetivada.
+        tests:
+          - not_null
+
+      - name: Ano
+        description: Ano de competência da venda.
+        tests:
+          - not_null
+
+      - name: Mes 
+        description: Mês de referência da transação.
+        tests:
+          - not_null
+
+      - name: customerid
+        description: Identificador do cliente responsável pela compra.
+        tests:
+          - not_null
+
+      - name: id_ender_cobranca
+        description: Código do endereço associado à cobrança do pedido.
+        tests:
+          - not_null
+
+      - name: dsc_pais
+        description: País relacionado ao endereço da venda.
+        tests:
+          - not_null
+
+      - name: dsc_estado
+        description: Unidade federativa vinculada à transação.
+        tests:
+          - not_null
+
+      - name: cidade
+        description: Município correspondente ao endereço da venda.
+        tests:
+          - not_null
+
+      - name: productid
+        description: Identificador do produto comercializado.
+        tests:
+          - not_null
+
+      - name: vlr_unitario
+        description: Preço unitário aplicado ao produto na venda.
+        tests:
+          - not_null
+
+      - name: quantidade
+        description: Quantidade de unidades vendidas do item.
+        tests:
+          - not_null
+
+      - name: vlr_total_item
+        description: Valor bruto do item (sem considerar descontos).
+        tests:
+          - not_null
+
+      - name: vlr_desconto
+        description: Montante de desconto concedido no item.
+        tests:
+          - not_null
+
+      - name: vlr_total_com_desconto
+        description: Valor líquido do item após aplicação do desconto.
+        tests:
+          - not_null
+
+      - name: frete_alocado
+        description: Parcela de frete atribuída ao item da venda.
+        tests:
+          - not_null
+
+      - name: tem_desconto
+        description: Indicador booleano informando se houve desconto aplicado ao item.
+        tests:
+          - not_null
+
+      - name: cardtype
+        description: Bandeira ou tipo de cartão utilizado como forma de pagamento.
+        tests:
+          - not_null
+
+      - name: status
+        description: Situação atual do pedido no fluxo comercial.
+        tests:
+          - not_null
