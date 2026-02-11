@@ -1,5 +1,5 @@
 with
-    -- import models
+
     int_sales as 
     (
         select *
@@ -23,7 +23,6 @@ with
             , int_sales.status
             , int_sales.customerid
             , int_sales.id_ender_cobranca
-            --, int_sales.creditcardid
             , int_sales.cardtype
             , int_sales.productid
             , int_sales.vlr_unitario
@@ -38,7 +37,7 @@ with
                 when int_sales.vlr_desconto > 0 then true
                 else false
             end as tem_desconto
-            , int_localidade.cidade
+            , int_localidade.dsc_cidade
             , int_localidade.dsc_estado
             , int_localidade.dsc_pais
         from int_sales

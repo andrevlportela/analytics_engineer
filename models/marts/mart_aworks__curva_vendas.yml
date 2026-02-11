@@ -1,5 +1,5 @@
 models:
-  - name: mart_aworks__curva_de_vendas
+  - name: mart_aworks__curva_vendas
     description: Modelo fato consolidado com métricas de vendas segmentadas por produto e dimensões geográficas e temporais (ano e mês).
     columns:
 
